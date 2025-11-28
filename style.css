@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+:root{
+    --corAzul: #00bdff;
+    --corCinza: #ececec;
+    --corBranca: #fff;
+}
+
+body{
+    background-image: linear-gradient(45deg, #d6fffc, #f6f6f6 60%);
+    overflow: hidden;
+}
+
+.interface{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tela-login{
+    width: 70%;
+    text-align: center;
+    transition: transform .5s, opacity .5s;
+}
+
+.tela-login h1{
+    font-size: 3.5rem;
+}
+
+.tela-login h1 span{
+    color: var(--corAzul);
+}
+
+.tela-login form{
+    width: 40%;
+    margin: 64px auto;
+}
+
+.tela-login form input{
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 8px;
+    outline: none;
+    border: none;
+    background-color: var(--corCinza);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.tela-login form > a{
+    font-size: .8rem;
+    text-align: right;
+    display: block;
+    color: var(--corAzul);
+}
+
+.tela-login form input[type='submit']{
+    margin-top: 24px;
+    background-color: var(--corAzul);
+    color: var(--corBranca);
+    border-radius: 32px;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+.tela-login form input[type='submit']:hover{
+    background-color: #00a4e0;
+}
+
+.tela-login .opt-login p{
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.opt-login .btn-opt-login button{
+    width: 56px;
+    height: 56px;
+    border: none;
+    background-color: var(--corBranca);
+    box-shadow: 4px 4px 10px #00000020;
+    margin: 0 4px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color .2s;
+}
+
+.opt-login .btn-opt-login button:hover{
+    background-color: #f8f8f8;
+}
+
+.btn-opt-login button img{
+    width: 80%;
+}
+
+.txt-criar-conta-login{
+    margin-top: 56px;
+}
+
+.txt-criar-conta-login p{
+    font-weight: 600;
+}
+
+.txt-criar-conta-login p a{
+    color: var(--corAzul);
+}
+
+.img-decoracao{
+    width: 30%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img-login{
+    background-image: url(img/viagem2.jpeg);
+    border-radius: 64px 0 0 64px;
+    transition: transform .5s, opacity .5s;
+}
+
+/* Estilo da tela de criar conta */
+
+.img-criar-conta{
+    background-image: url(img/viagem1.jpeg);
+    border-radius: 0 64px 64px 0;
+    transition: transform .5s, opacity .5s;
+}
+
+.nome-sobrenome{
+    display: flex;
+    gap: 8px;
+}
+
+/* Efeito de transição */
+
+#login, #criar-conta{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+#criar-conta{
+    pointer-events: none;
+}
+
+#criar-conta .tela-login{
+    transform: translateX(15rem);
+    opacity: 0;
+}
+
+#criar-conta .img-criar-conta{
+    transform: translateX(-15rem);
+    opacity: 0;
+}
+
+/* ----------------------------- */
+
+.ativo #login .tela-login{
+    transform: translateX(-15rem);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ativo #login .img-login{
+    transform: translateX(15rem);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* -------------------------------- */
+
+.ativo #criar-conta{
+    pointer-events: initial;
+}
+
+.ativo #criar-conta .tela-login{
+    transform: translateX(0rem);
+    opacity: 1;
+}
+
+.ativo #criar-conta .img-criar-conta{
+    transform: translateX(0rem);
+    opacity: 1;
+}
